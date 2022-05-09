@@ -7,7 +7,9 @@ interface FeedbackTypeStepProps{
 }
 
 
-export function FeedbackTypeStep({onFeedbackTypeChange}: FeedbackTypeStepProps){
+export function FeedbackTypeStep({
+    onFeedbackTypeChange
+}: FeedbackTypeStepProps){
     return(
         <>
             <header >
@@ -27,9 +29,9 @@ export function FeedbackTypeStep({onFeedbackTypeChange}: FeedbackTypeStepProps){
                             <img  src={value.image.source} alt={value.image.alt} className="w-6 h-6"/>
                             <span>{value.title}</span>
                         </button>
-                    )
+                    );
                 }) }
             </div>
         </>
-    )
+    );
 }

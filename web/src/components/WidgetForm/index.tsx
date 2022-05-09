@@ -5,7 +5,8 @@ import otherImageUrl from "../../assets/other.svg"
 import { useState } from "react";
 import { FeedbackTypeStep } from "./Steps/feedbackTypeStep";
 import { FeedbackContentStep } from "./Steps/feedbackContentStep";
-import { FeedbackSucessStep } from "./Steps/feedbackSucessStep";
+import { FeedbackSuccessStep } from "./Steps/feedbackSuccessStep";
+import { CloseButton } from "../CloseButton";
 
 export const feedbackTypes = {
     BUG:{
@@ -38,7 +39,7 @@ export type FeedbackType = keyof typeof feedbackTypes;
 
 export function WidgetForm(){
 
-    const [feedbackType, setFeedbackType] = useState< FeedbackType | null | false>(null)
+    const [feedbackType, setFeedbackType] = useState< FeedbackType | null >(null)
 
     const [feedbackSent, setFeedbackSent] = useState(false)
 
@@ -52,7 +53,7 @@ export function WidgetForm(){
         
         
     { feedbackSent ? (
-        < FeedbackSucessStep  onFeedbackRestartRequested={handleRestartFeedback}  />
+        < FeedbackSuccessStep  onFeedbackRestartRequested={handleRestartFeedback}  />
     ):(
         <>
         {!feedbackType ? (
